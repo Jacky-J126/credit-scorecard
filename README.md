@@ -72,7 +72,7 @@ python credit_scoring.py
 
 > 完整运行约需数分钟（随机森林填补 200 棵树）。
 
-### SQL 特征工程练习（可选）
+### SQL 特征工程练习
 
 ```bash
 python sql/run_queries.py
