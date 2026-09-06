@@ -53,7 +53,12 @@ baseScore = round(q + p * β₀)       # 基础得分常数（约 795，随截�
 │   ├── TestData.csv         # 测试集（30%）
 │   ├── WoeData.csv          # WOE 转换后数据
 │   └── ScoreData.csv        # 评分卡批量计算结果
-└── figures/                 # 运行生成的图形（ROC 曲线、评分分布等）
+├── figures/                 # 运行生成的图形（ROC 曲线、评分分布等）
+└── sql/                     # SQL 风控特征工程练习（SQLite，零第三方依赖）
+    ├── run_queries.py       # 建库 + 执行全部查询
+    ├── queries.sql          # 10 个风控面试高频查询（缺失率/分箱/WOE-IV/规则模拟…）
+    ├── README.md            # 查询清单与结果解读
+    └── results/             # 全部查询结果 CSV（已提交，可直接查看）
 ```
 
 ## 快速开始
@@ -66,6 +71,14 @@ python credit_scoring.py
 脚本按顺序完成：数据加载 → 缺失填补 → 异常值处理 → 训练/测试集划分 → 分箱与 WOE/IV 计算 → 逻辑回归拟合 → 测试集 ROC/AUC、KS、Gini 评估 → 评分卡生成 → 批量评分。所有中间结果与最终评分表写入 `data/`，图形输出到 `figures/`。
 
 > 完整运行约需数分钟（随机森林填补 200 棵树）。
+
+### SQL 特征工程练习（可选）
+
+```bash
+python sql/run_queries.py
+```
+
+将数据导入 SQLite 并执行 10 个风控面试高频查询（缺失率统计、等频分箱、WOE/IV 纯 SQL 计算、策略规则模拟等），结果见 `sql/results/`，解读见 `sql/README.md`。
 
 ## 结果
 
