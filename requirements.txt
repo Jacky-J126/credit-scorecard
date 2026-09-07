@@ -6,3 +6,8 @@ statsmodels==0.14.6
 scikit-learn==1.6.1
 matplotlib==3.9.4
 seaborn==0.13.2
+# experiments/ 三个实验脚本（tree_models / reject_inference / imbalance）
+xgboost==2.1.4
+lightgbm==4.6.0
+# tests/（python -m pytest）
+pytest==8.4.2
