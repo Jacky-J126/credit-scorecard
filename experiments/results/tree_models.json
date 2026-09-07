@@ -1,0 +1,35 @@
+{
+  "split": "70/30 random_state=0",
+  "fitting": "train-only（实验口径；主流水线论文口径为全量拟合）",
+  "n_test": 43607,
+  "models": [
+    {
+      "model": "logistic_woe",
+      "auc": 0.8478,
+      "ks": 0.5444,
+      "gini": 0.6957,
+      "note": "WOE 特征，主流水线同款 5 变量（train-only）"
+    },
+    {
+      "model": "logistic_raw",
+      "auc": 0.8089,
+      "ks": 0.4861,
+      "gini": 0.6178,
+      "note": "标准化原始特征"
+    },
+    {
+      "model": "xgboost",
+      "auc": 0.8611,
+      "ks": 0.5686,
+      "gini": 0.7222,
+      "note": "原始特征"
+    },
+    {
+      "model": "lightgbm",
+      "auc": 0.8613,
+      "ks": 0.5698,
+      "gini": 0.7226,
+      "note": "原始特征"
+    }
+  ]
+}

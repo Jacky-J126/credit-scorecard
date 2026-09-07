@@ -1,0 +1,36 @@
+{
+  "split": "70/30 random_state=0",
+  "fitting": "train-only（实验口径；L2 正则化逻辑回归 C=1.0）",
+  "simulation": {
+    "approve_rate": 0.6,
+    "cutoff": 0.964,
+    "n_approved": 61082,
+    "n_rejected": 40665,
+    "n_bands": 10,
+    "n_inferred_good": 4252,
+    "n_inferred_bad": 36413
+  },
+  "n_test": 43607,
+  "results": {
+    "baseline": {
+      "auc": 0.8478,
+      "ks": 0.5444,
+      "gini": 0.6955
+    },
+    "approved_only": {
+      "auc": 0.705,
+      "ks": 0.3302,
+      "gini": 0.41
+    },
+    "parcelling": {
+      "auc": 0.8203,
+      "ks": 0.5018,
+      "gini": 0.6406
+    },
+    "hard_cutoff": {
+      "auc": 0.8262,
+      "ks": 0.519,
+      "gini": 0.6523
+    }
+  }
+}

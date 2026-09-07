@@ -1,0 +1,36 @@
+{
+  "split": "70/30 random_state=0",
+  "fitting": "train-only（实验口径）",
+  "train_bad_rate": 0.067,
+  "n_test": 43607,
+  "models": [
+    {
+      "model": "logistic_woe",
+      "auc": 0.8478,
+      "ks": 0.5444,
+      "gini": 0.6957,
+      "note": "WOE 特征，不平衡（基线）"
+    },
+    {
+      "model": "class_weight",
+      "auc": 0.8485,
+      "ks": 0.5462,
+      "gini": 0.6971,
+      "note": "WOE 特征，class_weight=balanced"
+    },
+    {
+      "model": "oversample",
+      "auc": 0.8485,
+      "ks": 0.5461,
+      "gini": 0.697,
+      "note": "WOE 特征，坏样本过采样至 1:1"
+    },
+    {
+      "model": "xgb_scale_weight",
+      "auc": 0.8613,
+      "ks": 0.5669,
+      "gini": 0.7226,
+      "note": "原始特征，scale_pos_weight"
+    }
+  ]
+}
